@@ -3,36 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>formas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculadora basica</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-    <button onclick="operacionesBasicas()" > operaciones basicas </button> 
-    <button onclick="cuadradoDeUnNumero()"> cuadrado de un numero </button> 
-    <button onclick="areaDeUnTriangulo()"> area de un triangulo </button> 
-    <button onclick="centimetrosAMetros()"> centimetros a metros </button> 
-    
-    <button id="circulo"> circulo </button>
-    
-    <button id="derecha"> derecha </button>
-    <button id="izquierda"> izquierda </button>
-    
-    <button id="abajo"> abajo </button>
-  
-  
+<body onload="calculadora()"
+    <h1>Calculadora Operaciones Basicas </h1>
+    <div class="cont-c">
+        <table>
+        <tr>
+            <span id="pantalla"></span> 
+        </tr>
 
+        <tr>
+            <td><button id="siete">7</button></td>
+            <td><button id="ocho">8</button></td>
+            <td><button id="nueve">9</button></td>
+            <td><button id="dividir">/</button></td>
+        
+        </tr>
+        <tr>
+            <td><button id="cuatro">4</button></td>
+            <td><button id="cinco">5</button></td>
+            <td><button id="seis">6</button></td>
+            <td><button id="multiplicar">X</button></td>
+        
+        </tr>
+        <tr>
+            <td><button id="uno">1</button></td>
+            <td><button id="dos">2</button></td>
+            <td><button id="tres">3</button></td>
+            <td><button id="restar">-</button></td>
+        
+        </tr>
+        <tr>
+            <td><button id="igual">=</button></td>
+            <td><button id="cero">0</button></td>
+            <td><button id="clear">C</button></td>
+            <td><button id="sumar">+</button></td>
+        
+        </tr>
 
+    </table>
+    </div>
+    <h1>DANIEL VILLARRAGA SALGADO ADSI 2141151 </h1>
 
+<script src="js/main.js"></script>
 
-
-
-    <div id="cuadrado"></div>
-
-
-
-
-
-   <script src="js/main.js"></script> 
 </body>
 </html>

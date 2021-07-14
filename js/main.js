@@ -1,80 +1,151 @@
-function operacionesBasicas(){
-var a;
-var b;
-var suma;
-var resta;
-var multi;
-var divi;
+var valora;
+var valorb;
+var operacion;
 
+function calculadora() {
+    var pantalla = document.getElementById("pantalla");
+    
+    var uno = document.getElementById("uno");
+ var dos = document.getElementById("dos");
+ var tres = document.getElementById("tres");
+ var cuatro = document.getElementById("cuatro");
+ var cinco = document.getElementById("cinco");
+ var seis = document.getElementById("seis");
+ var siete = document.getElementById("siete");
+ var ocho = document.getElementById("ocho");
+ var nueve = document.getElementById("nueve");
+ var cero = document.getElementById("cero");
+ var sumar = document.getElementById("sumar");
+ var restar = document.getElementById("restar");
+ var multiplicar = document.getElementById("multiplicar");
+ var dividir = document.getElementById("dividir");
+ var clear = document.getElementById("clear");
+ var igual = document.getElementById("igual");
+    
+// eventos numericos
 
-var a=parseInt(prompt("por favor ingrese el primer valor"));
-var b=parseInt(prompt("por favor ingrese el segundo valor"));
-
-suma= a+b;
-resta= a-b;
-multi= a*b;
-divi= a/b;
-alert(" el resultado de la suma es "+ suma + "el resultado de la resta es  "
- + resta + " el resultado de la multiplicacion es " + multi + " el resultado de la division es " + divi);
-
-
-}
-function cuadradoDeUnNumero(){
-
-
-    var num;
-var multi
-var num=parseInt(prompt("ingrese el valor"));
-multi= num*num;
-
-alert("el cuadrado del numero ingresado es " + multi);
-}
-
-function areaDeUnTriangulo(){
-    var b;
-    var h;
-    var area;
-    var h=parseInt(prompt("ingrese la altura"));
-    var b=parseInt(prompt("ingrese la base"));
-    area= b*h/2;
-    alert("el are del triangulo es " + area);
+uno.onclick = function(e) {
+ pantalla.textContent =  pantalla.textContent + "1";  
 
 }
+dos.onclick = function(e) {
+    pantalla.textContent =  pantalla.textContent + "2";  
+   
+   }
+   tres.onclick = function(e) {
+    pantalla.textContent =  pantalla.textContent + "3";  
+   
+   }
+   cuatro.onclick = function(e) {
+    pantalla.textContent =  pantalla.textContent + "4";  
+   
+   }
+   cinco.onclick = function(e) {
+    pantalla.textContent =  pantalla.textContent + "5";  
+   
+   }
+   seis.onclick = function(e) {
+    pantalla.textContent =  pantalla.textContent + "6";  
+   
+   }
+   siete.onclick = function(e) {
+    pantalla.textContent =  pantalla.textContent + "7";  
+   
+   }
 
-function centimetrosAMetros(){
-    var x;
-    var conversion;
-    var x=parseInt(prompt("ingrese el valor a convertir "));
-    conversion = x*100
-    alert("la conversion de metros a centimetros es " + conversion);
+   ocho.onclick = function(e) {
+    pantalla.textContent =  pantalla.textContent + "8";  
+   
+   }
+   nueve.onclick = function(e) {
+    pantalla.textContent =  pantalla.textContent + "9";  
+   
+   }
+   cero.onclick = function(e) {
+    pantalla.textContent =  pantalla.textContent + "0";  
+   
+   }
+
+// eventos operaciones
 
 
+sumar.onclick= function (e) {
+ valora = pantalla.textContent;
+ operacion =  "+";
+ vaciar() ;
+} 
+
+
+restar.onclick= function (e) {
+    valora = pantalla.textContent;
+    operacion =  "-";
+    vaciar() ;
+    
 }
+
      
-     circulo.onclick= function(e){
-var selector= document.getElementById("cuadrado")
-selector.classList.toggle("circulo")
+   
+   multiplicar.onclick= function (e) {
+    valora = pantalla.textContent;
+    operacion =  "*";
+    vaciar() ;
+   }
+    
+   
+   dividir.onclick= function (e) {
+    valora = pantalla.textContent;
+    operacion =  "/";
+    vaciar() ;
+       
+   }
 
 
-     }
-     derecha.onclick= function(e){
-        var selector= document.getElementById("cuadrado")
-         selector.classList.toggle("derecha")
-             } 
+clear.onclick = function (e) {
+   
+    resetear();
 
-             izquierda.onclick= function(e){
-        var selector= document.getElementById("cuadrado")
-         selector.classList.toggle("izquierda")
-             
-        }
+}
+igual.onclick= function (e) {
+    valorb = pantalla.textContent;
+     resolver();
+}
+}
+function vaciar() {
+    pantalla.textContent="";
+}
+function resetear() {
+    pantalla.textContent="";
+    valora=0;
+    valorb=0;
+    operacion="" ;
+   
+ }
 
-        
 
-            abajo.onclick= function(e){
-                var selector= document.getElementById("cuadrado")
-                 selector.classList.toggle("abajo")
-                     
-                }
 
- 
+
+function resolver() {
+    var respuesta= 0;
+    switch (operacion) {
+        case "+":
+            respuesta = parseFloat(valora) + parseFloat(valorb);
+           break;
+           case"-" :
+           respuesta = parseFloat(valora) - parseFloat(valorb);
+           break;
+           case "*":
+
+            respuesta = parseFloat(valora) * parseFloat(valorb);
+            break;
+           case "/":
+            respuesta = parseFloat(valora) / parseFloat(valorb);
+            break;
+           
+            default:
+        break;
+    }
+   pantalla.textContent=respuesta
+}
+
+
 
